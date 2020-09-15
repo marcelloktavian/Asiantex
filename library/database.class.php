@@ -98,17 +98,17 @@ class Database{
             }
         }
 
-        if(is_array($where) && count($where) > 0){
+        if(is_array($Where) && count($Where) > 0){
             $this->sql.=" WHERE ";
             $i=0;
             foreach ($Where as $key => $value) {
                 $i++;
                 $this->sql.=$key."='".$value."'";
 
-                if($i < count($where)) $this->sql.=" AND ";
+                if($i < count($Where)) $this->sql.=" AND ";
             }
         }
-        return $this-execute();
+        return $this->execute();
     }
 
     public function bindParams($value){

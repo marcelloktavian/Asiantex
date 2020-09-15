@@ -5,10 +5,6 @@ class Controller{
         return $view;
     }
 
-    // protected function fileName($fileName){
-    //     return $fileName;
-    // }
-
     protected function model($modelName, $fileName){
         require_once ROOT.DS.'modules'.DS.$fileName.DS.'models'.DS.$modelName.'Model.php';
         $className=ucfirst($modelName).'Model';
@@ -19,6 +15,10 @@ class Controller{
         $view=$this->view('template');
         $view=bind('viewName',$viewName);
         $view=bind('data',$data);
+    }
+
+    public function back() {
+        echo '<script>history.go(-1);</script>';
     }
 
     public function redirect($url = "") {

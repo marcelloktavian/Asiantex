@@ -11,4 +11,4 @@
     define('DB_HOST','localhost'); //nama hostnya ex: localhost/127.0.0.1
     define('DB_USERNAME','root'); //nama username untuk hostnya jika xampp root
     define('DB_PASSWORD',''); //password untuk hostnya  default xampp kosong atau ''
-    define('DB_NAME','dbapotek'); //ini untuk nama databasenya contoh databse = test
+    define('DB_NAME','asiantex2018'); //ini untuk nama databasenya contoh databse = test

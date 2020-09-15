@@ -30,10 +30,10 @@
 					<div class="dropdown-user-scroll scrollbar-outer">
 						<li>
 							<div class="user-box">
-								<div class="avatar-lg"><img src="resources/assets/images/administrator.jpg" alt="image profile" class="avatar-img rounded" style="border: 1px solid #555;"></div>
+								<div class="avatar-lg"><img src="resources/assets/images/administrator.png" alt="image profile" class="avatar-img rounded" style="border: 1px solid #555;"></div>
 								<div class="u-text">
-									<h4><?= $data["login"]->nama ?></h4>
-									<p class="text-muted"><?= $data["login"]->role ?></p>
+									<h4><?= $data["login"]->Nama ?></h4>
+									<p class="text-muted"><?= $data["login"]->Posisi ?></p>
 								</div>
 							</div>
 						</li>

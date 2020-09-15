@@ -2,12 +2,12 @@
 	<div class="sidebar-content">
 		<div class="user">
 			<div class="avatar-sm float-left mr-2">
-				<img src="resources/assets/images/administrator.jpg" alt="..." class="avatar-img rounded-circle" style="border: 1px solid #555;">
+				<img src="resources/assets/images/administrator.png" alt="..." class="avatar-img rounded-circle" style="border: 1px solid #555;">
 			</div>
 			<div class="info">
 				<a><span>
-					<?= $data["login"]->nama ?>
-					<span class="user-level"><?= $data["login"]->role ?></span>
+					<?= $data["login"]->Nama ?>
+					<span class="user-level"><?= $data["login"]->Posisi ?></span>
 				</span></a>
 			</div>
 		</div>
@@ -26,42 +26,90 @@
 			</li>
 
 			<!-- Menu Master -->
-			<li class="nav-item <?php if($_GET['page']=='satuan' || $_GET['page']=='jenisobat') echo 'active'?>">
+			<li class="nav-item <?php if($_GET['page']=='armada') echo 'active'?>">
 				<a data-toggle="collapse" href="#master">
 					<i class="fas fa-layer-group"></i>
 					<p>Master Data</p>
 					<span class="caret"></span>
 				</a>
-				<div class="collapse  <?php if($_GET['page']=='satuan' || $_GET['page']=='jenisobat') echo 'show'?>" id="master">
+				<div class="collapse <?php if($_GET['page']!=='' && $_GET['page']=='armada') echo 'show'?>" id="master">
 					<ul class="nav nav-collapse">
-						<li class="<?php if($_GET['page']=='satuan') echo 'active'?>">
-							<a href="<?php echo PATH; ?>index.php?file=master&&page=satuan">
-								<span class="sub-item">Data Satuan</span>
+						<li>
+							<!-- Profil Perusahaan -->
+							<a href="<?php echo PATH; ?>index.php?file=master&&page=profilperusahaan">
+								<span class="sub-item">Profil Perusahaan</span>
 							</a>
 						</li>
-						<li class="<?php if($_GET['page']=='jenisobat') echo 'active'?>">
-							<a href="<?php echo PATH; ?>index.php?file=master&&page=jenisobat">
-								<span class="sub-item">Data Jenis Obat</span>
+						<li >
+							<!-- Armada -->
+							<a href="<?php echo PATH; ?>index.php?file=master&&page=armada">
+								<span class="sub-item">Armada</span>
 							</a>
 						</li>
 						<li>
-							<a href="<?php echo PATH; ?>index.php?file=master&&page=obat">
-								<span class="sub-item">Data Obat</span>
+							<!-- Bahan Material -->
+							<a href="<?php echo PATH; ?>index.php?file=master&&page=bahanmaterial">
+								<span class="sub-item">Bahan Material</span>
 							</a>
 						</li>
 						<li>
-							<a href="<?php echo PATH; ?>index.php?file=master&&page=penyakit">
-								<span class="sub-item">Data Penyakit</span>
+							<!-- Bahan Kimia -->
+							<a href="<?php echo PATH; ?>index.php?file=master&&page=bahankimia">
+								<span class="sub-item">Bahan Kimia</span>
 							</a>
 						</li>
 						<li>
-							<a href="<?php echo PATH; ?>index.php?file=master&&page=dokter">
-								<span class="sub-item">Data Dokter</span>
+							<!-- Bahan Grey -->
+							<a href="<?php echo PATH; ?>index.php?file=master&&page=bahangrey">
+								<span class="sub-item">Bahan Grey</span>
 							</a>
 						</li>
 						<li>
+							<!-- Bahan Kain -->
+							<a href="<?php echo PATH; ?>index.php?file=master&&page=bahankain">
+								<span class="sub-item">Bahan Kain</span>
+							</a>
+						</li>
+						<li>
+							<!-- Data Proses -->
+							<a href="<?php echo PATH; ?>index.php?file=master&&page=dataproses">
+								<span class="sub-item">Data Proses</span>
+							</a>
+						</li>
+						<li>
+							<!-- Jasa Warna -->
+							<a href="<?php echo PATH; ?>index.php?file=master&&page=jasawarna">
+								<span class="sub-item">Jasa Warna</span>
+							</a>
+						</li>
+						<li>
+							<!-- Jasa PO -->
+							<a href="<?php echo PATH; ?>index.php?file=master&&page=jasapo">
+								<span class="sub-item">Jasa PO</span>
+							</a>
+						</li>
+						<li>
+							<!-- Kategori Pembelian -->
+							<a href="<?php echo PATH; ?>index.php?file=master&&page=kategoripembelian">
+								<span class="sub-item">Kategori Pembelian</span>
+							</a>
+						</li>
+						<li>
+							<!-- Mesin Celup -->
+							<a href="<?php echo PATH; ?>index.php?file=master&&page=mesincelup">
+								<span class="sub-item">Mesin Celup</span>
+							</a>
+						</li>
+						<li>
+							<!-- Pelanggan -->
 							<a href="<?php echo PATH; ?>index.php?file=master&&page=pelanggan">
-								<span class="sub-item">Data Pelanggan</span>
+								<span class="sub-item">Pelanggan</span>
+							</a>
+						</li>
+						<li>
+							<!-- Pemasok -->
+							<a href="<?php echo PATH; ?>index.php?file=master&&page=pemasok">
+								<span class="sub-item">Pemasok</span>
 							</a>
 						</li>
 					</ul>
@@ -69,7 +117,7 @@
 			</li>
 
 			<!-- Menu Penjualan -->
-			<li class="nav-item">
+			<!-- <li class="nav-item">
 				<a data-toggle="collapse" href="#transaksi">
 					<i class="fas fa-layer-group"></i>
 					<p>Transaksi</p>
@@ -84,10 +132,10 @@
 						</li>
 					</ul>
 				</div>
-			</li>
+			</li> -->
 
 			<!-- Menu Laporan -->
-			<li class="nav-item">
+			<!-- <li class="nav-item">
 				<a data-toggle="collapse" href="#laporan">
 					<i class="fas fa-layer-group"></i>
 					<p>Laporan</p>
@@ -117,10 +165,10 @@
 						</li>
 					</ul>
 				</div>
-			</li>
+			</li> -->
 
 			<!-- Menu Setting -->
-			<li class="nav-item">
+			<!-- <li class="nav-item">
 				<a data-toggle="collapse" href="#setting">
 					<i class="fas fa-layer-group"></i>
 					<p>Setting</p>
@@ -145,7 +193,7 @@
 						</li>
 					</ul>
 				</div>
-			</li>
+			</li> -->
 		</ul>
 	</div>
 </div>
