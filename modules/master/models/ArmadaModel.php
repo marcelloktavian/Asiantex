@@ -4,7 +4,7 @@ class ArmadaModel extends Model{
 
 	public function get_data()
 	{
-		$sql = "SELECT * FROM `tblarmada` WHERE status='Y'";
+		$sql = "SELECT * FROM `tblarmada` order by status DESC";
 
 		$this->db->query($sql);
 
@@ -25,9 +25,15 @@ class ArmadaModel extends Model{
 		
 	}
 
-	public function deleteData($id)
+	public function deleteData($id, $stat)
 	{
-		$query = $this->db->update('tblarmada', array('status' => 'N'), array('id_ar' => $id));
+		if ($stat=="Y") {
+			//Menonaktifkan
+			$query = $this->db->update('tblarmada', array('status' => 'N'), array('id_ar' => $id));
+		} else {
+			//Mengaktifkan
+			$query = $this->db->update('tblarmada', array('status' => 'Y'), array('id_ar' => $id));
+		}
 		return $query;
 	}
 

@@ -15,11 +15,12 @@ class ArmadaController extends MainController {
 
 	public function delete() {
 		$id = isset($_GET["id"]) ? $_GET["id"] : 0;
+		$stat = isset($_GET["stat"]) ? $_GET["stat"] : "Y";
 
 		$this->model('armada','master');
 		$model = new ArmadaModel();
 
-		$data = $model->deleteData($id);
+		$data = $model->deleteData($id, $stat);
 
 		if($data) {
 			$this->back();

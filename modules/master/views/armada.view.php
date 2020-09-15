@@ -59,11 +59,11 @@
 										<td><?php echo $armada->status; ?></td>
 										<td>
 											<div class="form-button-action">
-												<button type="button" onclick="window.location.href='<?php echo SITE_URL; ?>?file=master&&page=armada&&action=update&&id=<?php echo $armada->id_ar; ?>';" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Data">
+												<button type="button" onclick="window.location.href='<?php echo SITE_URL; ?>?file=master&&page=armada&&action=update&&id=<?php echo $armada->id_ar; ?>';" class="btn btn-link btn-primary btn-lg">
 													<i class="fa fa-edit"></i>
 												</button>
-												<button type="button" onclick="hapus('<?= $armada->id_ar ?>', '<?= $armada->Nama ?>')" data-toggle="tooltip" title="" class="btn btn-link btn-danger btn-lg" data-original-title="Hapus Data">
-													<i class="fa fa-times"></i>
+												<button type="button" onclick="hapus('<?= $armada->id_ar ?>', '<?= $armada->Nama ?>', '<?= $armada->status ?>', '<?php if($armada->status == "Y"){echo "nonaktifkan";}else{echo "aktifkan";} ?>')" class="btn btn-link btn-<?php if($armada->status == "Y"){echo "danger";}else{echo "success";} ?> btn-lg">
+													<i class="fa fa-<?php if($armada->status == "Y"){echo "times";}else{echo "check";} ?>"></i>
 												</button>
 											</div>
 										</td>
@@ -85,22 +85,26 @@
 			"lengthMenu": [[25, 50, 100,-1], [25, 50, 100, "All"]]
 		});
 
-		function hapus($id, $nama) {
-			var id =  $id;
-			var nama =  $nama;
+		function hapus($id, $nama, $status, $ket) {
+			var id 		= $id;
+			var nama 	= $nama;
+			var ket 	= $ket;
+			var status 	= $status;
+
 			Swal.fire({
 				title: 'Konfirmasi',
-				text: "Anda ingin menghapus "+nama+"?",
+				text: "Anda ingin "+ket+" "+nama+"?",
 				icon: 'warning',
 				showCancelButton: true,
-				confirmButtonText: 'Hapus',
+				confirmButtonText: 'Ya',
 				confirmButtonColor: '#d33',
 				cancelButtonColor: '#3085d6',
 				cancelButtonText: 'Tidak',
 				reverseButtons: false
 			}).then((result) => {
 				if (result.value) {
-					window.location.href="<?php echo SITE_URL; ?>?file=master&&page=armada&&action=delete&&id="+id+"";
+					if (true) {} else {}
+					window.location.href="<?php echo SITE_URL; ?>?file=master&&page=armada&&action=delete&&stat="+status+"&&id="+id+"";
 				}
 			});
 		};

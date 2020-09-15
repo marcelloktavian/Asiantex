@@ -40,7 +40,7 @@
 								<span class="sub-item">Profil Perusahaan</span>
 							</a>
 						</li>
-						<li >
+						<li>
 							<!-- Armada -->
 							<a href="<?php echo PATH; ?>index.php?file=master&&page=armada">
 								<span class="sub-item">Armada</span>
@@ -86,12 +86,6 @@
 							<!-- Jasa PO -->
 							<a href="<?php echo PATH; ?>index.php?file=master&&page=jasapo">
 								<span class="sub-item">Jasa PO</span>
-							</a>
-						</li>
-						<li>
-							<!-- Kategori Pembelian -->
-							<a href="<?php echo PATH; ?>index.php?file=master&&page=kategoripembelian">
-								<span class="sub-item">Kategori Pembelian</span>
 							</a>
 						</li>
 						<li>
