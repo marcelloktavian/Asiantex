@@ -64,7 +64,7 @@
 								<div class="form-group form-inline">
 									<label for="idarmada" class="col-md-3 col-form-label">ID Armada</label>
 									<div class="col-md-9 p-0">
-										<input type="text" class="form-control input-full" id="idarmada" name ="idarmada" placeholder="Masukkan ID Armada" value="<?php if($_GET['action']=='insert'){echo "test";}else if(count($data['isinya'])>0){echo $data['isinya'][0];}else if($_GET['action']=='update'){echo $data["armada"]->id_ar;} ?>" readonly>
+										<input type="text" class="form-control input-full" id="idarmada" name ="idarmada" placeholder="Masukkan ID Armada" value="<?php if($_GET['action']=='insert'){echo $data["kode"]->awal;}else if(count($data['isinya'])>0){echo $data['isinya'][0];}else if($_GET['action']=='update'){echo $data["armada"]->id_ar;} ?>" readonly>
 										<input type="hidden" name="userName" value="<?=$data['login']->Nama?>">
 									</div>
 								</div>

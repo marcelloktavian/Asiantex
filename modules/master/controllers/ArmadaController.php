@@ -31,7 +31,7 @@ class ArmadaController extends MainController {
 
 		$this->model('armada','master');
 		$model = new ArmadaModel();
-		// $kode = $model->kodeauto();
+		$kode = $model->kodeauto();
 
 		$isinya     = array();
 		$error    	= null;
@@ -91,7 +91,7 @@ class ArmadaController extends MainController {
 
 		}
 
-		$this->template('master/frmArmada', array('success' => $success, 'error' => $error,'isinya' => $isinya, 'title' => 'Tambah Data'));
+		$this->template('master/frmArmada', array('kode' => $kode[0], 'success' => $success, 'error' => $error,'isinya' => $isinya, 'title' => 'Tambah Data'));
 
 	}
 
