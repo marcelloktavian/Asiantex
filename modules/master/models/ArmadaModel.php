@@ -4,7 +4,7 @@ class ArmadaModel extends Model{
 
 	public function get_data()
 	{
-		$sql = "SELECT * FROM `tblarmada` order by status DESC";
+		$sql = "SELECT * FROM `tblarmada` ORDER BY status DESC, substring(id_ar,6,2) ASC, substring(id_ar,4,2) ASC, substring(id_ar,9,4) ASC";
 
 		$this->db->query($sql);
 
