@@ -30,6 +30,7 @@ class ArmadaController extends MainController {
 
 		$this->model('armada','master');
 		$model = new ArmadaModel();
+		// $kode = $model->kodeauto();
 
 		$isinya     = array();
 		$error    	= null;

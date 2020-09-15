@@ -20,6 +20,11 @@ class ArmadaModel extends Model{
 		return $this->db->execute()->toObject();
 	}
 
+	public function kodeauto()
+	{
+		
+	}
+
 	public function deleteData($id)
 	{
 		$query = $this->db->update('tblarmada', array('status' => 'T'), array('id_ar' => $id));
