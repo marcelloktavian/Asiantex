@@ -59,10 +59,10 @@
 										<td><?php echo $armada->status; ?></td>
 										<td>
 											<div class="form-button-action">
-												<button type="button" onclick="window.location.href='<?php echo SITE_URL; ?>?file=master&&page=armada&&action=update&&id=<?php echo $armada->id_ar; ?>';" class="btn btn-link btn-primary btn-lg">
+												<button type="button" data-toggle="tooltip" title="Edit Data" onclick="window.location.href='<?php echo SITE_URL; ?>?file=master&&page=armada&&action=update&&id=<?php echo $armada->id_ar; ?>';" class="btn btn-link btn-primary btn-lg">
 													<i class="fa fa-edit"></i>
 												</button>
-												<button type="button" onclick="hapus('<?= $armada->id_ar ?>', '<?= $armada->Nama ?>', '<?= $armada->status ?>', '<?php if($armada->status == "Y"){echo "nonaktifkan";}else{echo "aktifkan";} ?>')" class="btn btn-link btn-<?php if($armada->status == "Y"){echo "danger";}else{echo "success";} ?> btn-lg">
+												<button type="button" data-toggle="tooltip" title="<?php if($armada->status == "Y"){echo "Nonaktifkan";}else{echo "Aktifkan";} ?>" onclick="hapus('<?= $armada->id_ar ?>', '<?= $armada->Nama ?>', '<?= $armada->status ?>', '<?php if($armada->status == "Y"){echo "nonaktifkan";}else{echo "aktifkan";} ?>')" class="btn btn-link btn-<?php if($armada->status == "Y"){echo "danger";}else{echo "success";} ?> btn-lg">
 													<i class="fa fa-<?php if($armada->status == "Y"){echo "times";}else{echo "check";} ?>"></i>
 												</button>
 											</div>
@@ -81,8 +81,12 @@
 	</div>
 
 	<script>
-		$('#tabelmaster').DataTable({
-			"lengthMenu": [[25, 50, 100,-1], [25, 50, 100, "All"]]
+		$(document).ready(function(){
+			$('#tabelmaster').DataTable({
+				"lengthMenu": [[25, 50, 100,-1], [25, 50, 100, "All"]]
+			});
+
+			$('[data-toggle="tooltip"]').tooltip();   
 		});
 
 		function hapus($id, $nama, $status, $ket) {
@@ -104,7 +108,7 @@
 			}).then((result) => {
 				if (result.value) {
 					if (true) {} else {}
-					window.location.href="<?php echo SITE_URL; ?>?file=master&&page=armada&&action=delete&&stat="+status+"&&id="+id+"";
+						window.location.href="<?php echo SITE_URL; ?>?file=master&&page=armada&&action=delete&&stat="+status+"&&id="+id+"";
 				}
 			});
 		};
