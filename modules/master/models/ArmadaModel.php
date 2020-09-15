@@ -27,7 +27,7 @@ class ArmadaModel extends Model{
 
 	public function deleteData($id)
 	{
-		$query = $this->db->update('tblarmada', array('status' => 'T'), array('id_ar' => $id));
+		$query = $this->db->update('tblarmada', array('status' => 'N'), array('id_ar' => $id));
 		return $query;
 	}
 
