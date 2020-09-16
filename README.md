@@ -3,13 +3,13 @@
 
 ## master menu
 
-## nama menu | nama table master didatabase
+## nama menu | nama table master didatabase  | status
 
 profil perusahaan   |  tblcompro
 
-Armada   |  tblarmada
+Armada   |  tblarmada   |  Y
 
-Bahan Material   |  tblmaterial
+Bahan Material   |  tblmaterial   |  P
 
 Bahan Kimia   |  tblchemical
 

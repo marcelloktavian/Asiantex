@@ -11,7 +11,7 @@ $page = (isset($_GET['page']) && $_GET['page']) ? $_GET['page'] : 'dashboard/hom
 	
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-    <link rel="icon" href="resources/assets/images/logo.ico" type="image/x-icon"/>
+	<link rel="icon" href="resources/assets/images/logo.ico" type="image/x-icon"/>
 
 	<!-- Fonts and icons -->
 	<script src="resources/assets/plugins/webfont/webfont.min.js"></script>
@@ -27,6 +27,8 @@ $page = (isset($_GET['page']) && $_GET['page']) ? $_GET['page'] : 'dashboard/hom
 
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="resources/assets/plugins/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="resources/assets/plugins/bootstrap-select/css/bootstrap-select.min.css">
+	<link rel="stylesheet" href="resources/assets/plugins/toastr/toastr.css">
 	<link rel="stylesheet" href="resources/assets/css/atlantis.min.css">
 
 	<!--   Core JS Files   -->
@@ -49,6 +51,9 @@ $page = (isset($_GET['page']) && $_GET['page']) ? $_GET['page'] : 'dashboard/hom
 	<!-- Bootstrap Notify -->
 	<script src="resources/assets/plugins/bootstrap-notify/bootstrap-notify.min.js"></script>
 
+	<!-- Bootstrap Select -->
+	<script src="resources/assets/plugins/bootstrap-select/js/bootstrap-select.min.js"></script>
+
 	<!-- charts js -->
 	<script src="resources/assets/plugins/chart.js/chart.min.js"></script>
 	<script src="resources/assets/plugins/chart-circle/circles.min.js"></script>
@@ -56,6 +61,7 @@ $page = (isset($_GET['page']) && $_GET['page']) ? $_GET['page'] : 'dashboard/hom
 	<!-- JS -->
 	<script src="resources/assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
 	<script src="resources/assets/js/atlantis.min.js"></script>
+	<script src="resources/assets/plugins/toastr/toastr.js"></script>
 
 </head>
 <body>

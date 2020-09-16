@@ -160,7 +160,7 @@ class ArmadaController extends MainController {
 
 		}
 
-		$this->template('master/frmArmada', array('armada' => $data[0], 'success' => $success, 'error' => $error, 'isinya' => $isinya, 'title' => 'Edit Data'));
+		$this->template('master/frmArmada', array('armada' => $data[0], 'success' => $success, 'error' => $error, 'isinya' => $isinya, 'title' => 'Ubah Data'));
 
 	}
 

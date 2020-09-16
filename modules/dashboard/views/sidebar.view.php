@@ -26,13 +26,13 @@
 			</li>
 
 			<!-- Menu Master -->
-			<li class="nav-item <?php if($_GET['page']=='armada') echo 'active'?>">
+			<li class="nav-item <?php if($_GET['page']=='armada' || $_GET['page']=='bahanmaterial') echo 'active'?>">
 				<a data-toggle="collapse" href="#master">
 					<i class="fas fa-layer-group"></i>
 					<p>Master Data</p>
 					<span class="caret"></span>
 				</a>
-				<div class="collapse <?php if($_GET['page']!=='' && $_GET['page']=='armada') echo 'show'?>" id="master">
+				<div class="collapse <?php if($_GET['page']!=='' && ($_GET['page']=='armada' || $_GET['page']=='bahanmaterial')) echo 'show'?>" id="master">
 					<ul class="nav nav-collapse">
 						<li>
 							<!-- Profil Perusahaan -->

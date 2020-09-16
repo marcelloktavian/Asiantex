@@ -37,7 +37,7 @@
 							<thead>
 								<tr>
 									<th width="5%">No</th>
-									<th>ID</th>
+									<th >ID</th>
 									<th>No POL</th>
 									<th>Nama</th>
 									<th>Keterangan</th>
@@ -45,18 +45,18 @@
 									<th width="5%">Aksi</th>
 								</tr>
 							</thead>
-							<tbody id="list-data">
+							<tbody>
 								<?php
 								$no = 1;
 								foreach($data["armada"] as $armada) {
 									?>
 									<tr>
-										<td><?php echo $no; ?></td>
-										<td><?php echo $armada->id_ar; ?></td>
-										<td><?php echo $armada->NoPOL; ?></td>
-										<td><?php echo $armada->Nama; ?></td>
-										<td><?php echo $armada->Keterangan; ?></td>
-										<td><?php echo $armada->status; ?></td>
+										<td><?= $no; ?></td>
+										<td><?=$armada->id_ar; ?></td>
+										<td><?=$armada->NoPOL; ?></td>
+										<td><?= $armada->Nama; ?></td>
+										<td><?= $armada->Keterangan; ?></td>
+										<td><?= $armada->status; ?></td>
 										<td>
 											<div class="form-button-action">
 												<button type="button" data-toggle="tooltip" title="Edit Data" onclick="window.location.href='<?php echo SITE_URL; ?>?file=master&&page=armada&&action=update&&id=<?php echo $armada->id_ar; ?>';" class="btn btn-link btn-primary btn-lg">
@@ -82,11 +82,13 @@
 
 	<script>
 		$(document).ready(function(){
+
 			$('#tabelmaster').DataTable({
 				"lengthMenu": [[25, 50, 100,-1], [25, 50, 100, "All"]]
 			});
 
 			$('[data-toggle="tooltip"]').tooltip();   
+
 		});
 
 		function hapus($id, $nama, $status, $ket) {

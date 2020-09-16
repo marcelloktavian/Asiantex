@@ -13,7 +13,7 @@ class ArmadaModel extends Model{
 
 	public function getID($id)
 	{
-		$sql = "SELECT * FROM `tblarmada` WHERE status='Y' and id_ar='".$id."'";
+		$sql = "SELECT * FROM `tblarmada` WHERE id_ar='".$id."'";
 
 		$this->db->query($sql);
 

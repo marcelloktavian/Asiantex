@@ -43,23 +43,29 @@
 							<?php
 							if(isset($data["success"])) {
 								?>
-
-								<div class="alert alert-success">
+								<script type="text/javascript">
+								Command: toastr["success"]("<?= $data["success"]; ?>", "Success")
+								</script>
+<!-- 								<div class="alert alert-success">
 									<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 									<?php echo $data["success"]; ?>
-								</div>
-								<meta http-equiv="refresh" content="1;url=<?php echo PATH; ?>?file=master&&page=armada">
+								</div> -->
+								<meta http-equiv="refresh" content="2;url=<?php echo PATH; ?>?file=master&&page=armada">
 
 							<?php }else if (isset($data["error"])) {
 								?>
-								<div class="alert alert-danger" role="alert">
+								<script type="text/javascript">
+								Command: toastr["error"]("<?= $data["error"]; ?>", "Failed")
+								</script>
+								<!-- <div class="alert alert-danger" role="alert">
 									<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 									<?php echo $data["error"]; ?>
-								</div>
+								</div> -->
 								
 							<?php } ?>
 
 							<form method="post" role="form">
+
 								<!-- ID Armada -->
 								<div class="form-group form-inline">
 									<label for="idarmada" class="col-md-3 col-form-label">ID Armada</label>
@@ -68,6 +74,7 @@
 										<input type="hidden" name="userName" value="<?=$data['login']->Nama?>">
 									</div>
 								</div>
+
 								<!-- No POL -->
 								<div class="form-group form-inline">
 									<label for="nopol" class="col-md-3 col-form-label">No POL</label>
@@ -75,6 +82,7 @@
 										<input type="text" class="form-control input-full" id="nopol" name="nopol" placeholder="Masukkan No POL" value="<?php if(count($data['isinya'])>0){echo $data['isinya'][1];}else if($_GET['action']=='update'){echo $data["armada"]->NoPOL;} ?>" required>
 									</div>
 								</div>
+
 								<!-- Nama Armada -->
 								<div class="form-group form-inline">
 									<label for="nama" class="col-md-3 col-form-label">Nama Armada</label>
@@ -82,6 +90,7 @@
 										<input type="text" class="form-control input-full" id="nama" name="nama" placeholder="Masukkan Nama Armada" value="<?php if(count($data['isinya'])>0){echo $data['isinya'][2];}else if($_GET['action']=='update'){echo $data["armada"]->Nama;} ?>" required>
 									</div>
 								</div>
+								
 								<!-- Keterangan -->
 								<div class="form-group form-inline">
 									<label for="keterangan" class="col-md-3 col-form-label">Keterangan</label>
