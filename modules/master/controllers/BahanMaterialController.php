@@ -190,7 +190,6 @@ class BahanMaterialController extends MainController {
 			array_push($isinya, $ket);
 
 			$dataUpdate = array(
-				'id_mt'       	=> trim($_POST["idmaterial"]),
 				'merk'			=> trim($_POST["merk"]),
 				'nama'			=> trim($_POST["nama"]),
 				'id_mu'			=> NULL,
@@ -198,7 +197,6 @@ class BahanMaterialController extends MainController {
 				'satuan'		=> $ex[1],
 				'harga'			=> trim($_POST["harga"]),
 				'keterangan'	=> trim($_POST["keterangan"]),
-				'status'       	=> 'Y',
 				'lastmodified' 	=> date("Y-m-d H:i:s"),
 				'user'			=> trim($_POST["userName"]),
 				'type'			=> 'G',
